@@ -1,8 +1,8 @@
 class Retrace < Formula
   desc "Time-travel debugger for Apple Silicon Macs"
   homepage "https://github.com/NMitchem/retrace"
-  url "https://github.com/NMitchem/retrace/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "ba9502efb3e6f0c4b1c49eaec87b091d70293efdf019296619a4bf861e1abfcf"
+  url "https://github.com/NMitchem/retrace/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "8f716d6511e483d02e3022ea1975c016cff4c324aaf84a8bf95252c0766062b9"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/NMitchem/retrace.git", branch: "main"
 
@@ -54,7 +54,7 @@ class Retrace < Formula
   end
 
   test do
-    assert_match "retrace 0.1.0", shell_output("#{bin}/retrace --version")
+    assert_match "retrace 0.1.1", shell_output("#{bin}/retrace --version")
     assert_match "com.apple.security.hypervisor",
                  shell_output("codesign -d --entitlements - #{bin}/retrace 2>&1")
     (testpath/"three.c").write "int main(void){return 3;}\n"
